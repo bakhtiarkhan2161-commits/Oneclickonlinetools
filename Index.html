@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneClickTools - All-in-One Online Toolkit Hub</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxx" crossorigin="anonymous"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .category-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .ad-container {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            border-radius: 12px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: 600;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-tools text-blue-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">OneClickTools<span class="text-blue-600">.com</span></span>
+                    </div>
+                    <nav class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#" class="text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-blue-500 text-sm font-medium">Home</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium">About</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium">Contact</a>
+                    </nav>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="#" class="relative inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-700 focus:outline-none">
+                            <i class="fas fa-user mr-2"></i> Login
+                        </a>
+                    </div>
+                    <div class="ml-2 md:hidden">
+                        <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
+                <a href="#" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
+                <a href="#" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
+                <a href="#" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Privacy</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">All-In-One Online Toolkit Hub</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Access 100+ free tools for PDFs, videos, images, SEO, utilities and more. No installation required!</p>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="search-tools" placeholder="Search for tools (PDF Converter, Image Resizer, QR Generator...)" class="w-full px-6 py-4 rounded-full shadow-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button class="absolute right-2 top-2 bg-blue-600 text-white rounded-full px-6 py-2 hover:bg-blue-700 transition">
+                        <i class="fas fa-search mr-2"></i> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Container - Top -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="ad-container">
+            <div class="text-center p-4">
+                <i class="fas fa-ad text-2xl mb-2"></i>
+                <p>Advertisement</p>
+                <p class="text-sm mt-1">Google AdSense - Responsive Ad Unit</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Tools Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Most Popular Tools</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our top 20 most used tools by thousands of users daily</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Top Tool Cards -->
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 card-hover fade-in">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-file-pdf text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-gray-800 mb-1">PDF to Word</h3>
+                            <p class="text-gray-600 text-sm">Convert PDF documents to editable Word files</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 card-hover fade-in">
+                    <div class="flex items-start">
+                        <div class="bg-green-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-compress text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-gray-800 mb-1">Image Compressor</h3>
+                            <p class="text-gray-600 text-sm">Reduce image file size without losing quality</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 card-hover fade-in">
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-video text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-gray-800 mb-1">Video Converter</h3>
+                            <p class="text-gray-600 text-sm">Convert videos to MP4, AVI, MOV and more formats</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card bg-white rounded-xl shadow-md p-6 card-hover fade-in">
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-qrcode text-yellow-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-gray-800 mb-1">QR Generator</h3>
+                            <p class="text-gray-600 text-sm">Create custom QR codes for URLs, text, and contacts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Container - Middle -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="ad-container">
+            <div class="text-center p-4">
+                <i class="fas fa-ad text-2xl mb-2"></i>
+                <p>Advertisement</p>
+                <p class="text-sm mt-1">Google AdSense - Responsive Ad Unit</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Browse Tools by Category</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our collection of free online tools organized by category</p>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button class="category-btn active px-4 py-2 rounded-full bg-blue-100 text-blue-800 font-medium text-sm">All Tools</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium text-sm">PDF Tools</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium text-sm">Video Tools</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium text-sm">Image Tools</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium text-sm">SEO Tools</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium text-sm">Utilities</button>
+                <button class="category-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 font-medium text-sm">Developer</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Category Cards -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-file-pdf text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">PDF Tools</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Edit, convert, compress, and manage PDF documents</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> PDF to Word Converter</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> PDF Compressor</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> PDF Merger</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> PDF Splitter</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> PDF to JPG Converter</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-video text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Video & Social Media</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Edit, convert and optimize videos for social platforms</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Video Converter</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Video Compressor</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> YouTube Thumbnail Downloader</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Social Media Video Resizer</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> GIF Maker</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-image text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Image Tools</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Edit, convert, compress and enhance images</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Image Compressor</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Image Resizer</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Background Remover</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Image Converter</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Watermark Remover</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-chart-line text-yellow-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">SEO & Marketing</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Optimize your content and analyze your SEO</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Keyword Research Tool</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Website Analyzer</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Backlink Checker</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Plagiarism Checker</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Meta Tag Generator</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-tools text-red-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Daily Utilities</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Helpful tools for everyday tasks and productivity</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Online Notepad</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Unit Converter</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Currency Converter</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Password Generator</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Calculator</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-code text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Developer Tools</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Essential utilities for developers and programmers</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> QR Code Generator</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> JSON Formatter</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Code Minifier</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Base64 Encoder/Decoder</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> User Agent Parser</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Container - Bottom -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="ad-container">
+            <div class="text-center p-4">
+                <i class="fas fa-ad text-2xl mb-2"></i>
+                <p>Advertisement</p>
+                <p class="text-sm mt-1">Google AdSense - Responsive Ad Unit</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-blue-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">OneClickTools<span class="text-blue-400">.com</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">All-in-one free online toolkit hub with 100+ tools for PDF, video, image, SEO, utilities and more.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">PDF Tools</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Video & Social Media</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Image Tools</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">SEO & Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Daily Utilities</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Developer Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tutorials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">API</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Disclaimer</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 OneClickTools.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Search functionality
+        const searchInput = document.getElementById('search-tools');
+        const toolCards = document.querySelectorAll('.tool-card');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            toolCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) {
+                    card.classList.remove('hidden');
+                    card.classList.add('fade-in');
+                } else if (description.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                    card.classList.add('fade-in');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Category filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-100', 'text-blue-800'));
+                
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-blue-100', 'text-blue-800');
+            });
+        });
+    </script>
+</body>
+</html>
